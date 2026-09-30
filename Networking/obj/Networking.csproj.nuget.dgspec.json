@@ -1,35 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\csharp\\Networking\\Networking\\Networking.csproj": {}
+    "C:\\Users\\Poyesis\\projects\\networking_in_csharp\\Networking\\Networking.csproj": {}
   },
   "projects": {
-    "D:\\csharp\\Networking\\Networking\\Networking.csproj": {
+    "C:\\Users\\Poyesis\\projects\\networking_in_csharp\\Networking\\Networking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\csharp\\Networking\\Networking\\Networking.csproj",
+        "projectUniqueName": "C:\\Users\\Poyesis\\projects\\networking_in_csharp\\Networking\\Networking.csproj",
         "projectName": "Networking",
-        "projectPath": "D:\\csharp\\Networking\\Networking\\Networking.csproj",
-        "packagesPath": "C:\\Users\\Yahya-FrequenC\\.nuget\\packages\\",
-        "outputPath": "D:\\csharp\\Networking\\Networking\\obj\\",
+        "projectPath": "C:\\Users\\Poyesis\\projects\\networking_in_csharp\\Networking\\Networking.csproj",
+        "packagesPath": "C:\\Users\\Poyesis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Poyesis\\projects\\networking_in_csharp\\Networking\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Yahya-FrequenC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Poyesis\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -44,10 +39,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "imports": [
             "net461",
@@ -65,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

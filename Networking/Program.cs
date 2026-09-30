@@ -1,5 +1,5 @@
-﻿
-using Networking.Lib;
+﻿using Networking.Cmd;
+using Networking.Runnable;
 
 namespace Networking
 {
@@ -7,20 +7,24 @@ namespace Networking
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter url:");
-            string? url = Console.ReadLine();
+            App app = new App();
+            IRunnable? runnable = null;
+            int selectedApp = app.Start();
 
-            Console.WriteLine("Enter filename:");
-            string? file = Console.ReadLine();
+            switch (selectedApp)
+            {
+                case 1:
+                    runnable = new RunnableDownloader();
+                    break;
+                default:
+                    Console.WriteLine("No app has been selected");
+                    break;
+            }
 
-            Console.WriteLine("Enter folder name:");
-            string? folder = Console.ReadLine();
-
-            Downloader downloader = new Downloader(url, file, folder);
-            Task dlTask = downloader.DownloadWebPage();
-
-
-            dlTask.GetAwaiter().GetResult();
+            Console.WriteLine("============================");
+            Console.WriteLine(runnable?.GetType().Name);
+            Console.WriteLine("============================");
+            runnable?.Run();
         }
     }
 }
