@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="HttpServer/HttpServer.csproj" />
   <Project Path="Networking/Networking.csproj" />
+  <Project Path="TcpChatServer/TcpChatServer.csproj" />
 </Solution>
