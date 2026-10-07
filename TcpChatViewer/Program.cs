@@ -51,7 +51,7 @@ namespace TcpChatViewer
                 // check that we're still connected, if the server has not kicked us, then we're in
                 if (!_isDisconnected(_client))
                 {
-                    Running = false;
+                    Running = true;
                     Console.WriteLine("Press Ctrl-C to exit the viewer at any time.");
                 }
                 else
@@ -79,20 +79,20 @@ namespace TcpChatViewer
         // Main loop, listens and prints messages from the server
         public void ListenForMessages()
         {
-            bool wasRunning = false;
+            bool wasRunning = Running;
 
             // Listen for messages
             while (Running)
             {
                 // Do we have a new message ?
                 int messageLength = _client.Available;
-                if (messageLength < 0)
+                if (messageLength > 0)
                 {
                     // read the whole message
                     byte[] msgBuffer = new byte[messageLength];
-                    _msgStream?.Read(msgBuffer, 0, messageLength); // Blocks
+                    int bytesRead = _msgStream!.Read(msgBuffer, 0, messageLength); // Blocks
 
-                    string msg = Encoding.UTF8.GetString(msgBuffer);
+                    string msg = Encoding.UTF8.GetString(msgBuffer, 0, bytesRead);
                     Console.WriteLine(msg);
                 }
 
