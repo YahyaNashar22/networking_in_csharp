@@ -3,4 +3,5 @@
   <Project Path="Networking/Networking.csproj" />
   <Project Path="TcpChatMessenger/TcpChatMessenger.csproj" />
   <Project Path="TcpChatServer/TcpChatServer.csproj" />
+  <Project Path="TcpChatViewer/TcpChatViewer.csproj" />
 </Solution>
