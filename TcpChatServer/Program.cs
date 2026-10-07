@@ -208,10 +208,13 @@ namespace TcpChatServer
                 {
                     // there is one . . get it
                     byte[] msgBuffer = new byte[messageLength];
-                    m.GetStream().Read(msgBuffer, 0, msgBuffer.Length);
+                    NetworkStream stream = m.GetStream();
+
+                    int bytesRead = stream.Read(msgBuffer, 0, msgBuffer.Length);
 
                     // Attach a name to it and shove it into the queue
-                    string msg = String.Format($"{_names[m]}: {Encoding.UTF8.GetString(msgBuffer)}");
+                    string message = Encoding.UTF8.GetString(msgBuffer, 0, bytesRead);
+                    string msg = $"{_names[m]}: {message}";
                     _messageQueue.Enqueue(msg);
                 }
             }
@@ -247,6 +250,7 @@ namespace TcpChatServer
             }
             catch (SocketException se)
             {
+                Console.WriteLine(se);
                 // we go a socket error, assume it's disconnected
                 return true;
             }
@@ -263,8 +267,8 @@ namespace TcpChatServer
 
     class Program
     {
-        public static TcpChatServer chat;
-        protected static void InterruptHandler(object sender, ConsoleCancelEventArgs args)
+        public static TcpChatServer chat = null!;
+        protected static void InterruptHandler(object? sender, ConsoleCancelEventArgs args)
         {
             chat.ShutDown();
             args.Cancel = true;
